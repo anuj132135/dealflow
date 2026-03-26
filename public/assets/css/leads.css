@@ -1,0 +1,72 @@
+.leads{
+    min-height: 100vh;
+}
+.scroll {
+    overflow-x: scroll;
+    max-height: 40rem;
+}
+
+.scroll::-webkit-scrollbar {
+    height: 10px;
+    width: 5px;
+}
+.scroll::-webkit-scrollbar-thumb{
+    background-color:lightgray;
+}
+.messageBox{
+    padding-left: 0;
+}
+td a{
+    color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
+}
+.leadprofile{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 8rem;
+    box-shadow: 0 0 5px lightgray;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+.leadprofile img{
+    height: 6rem;
+    border-radius: 100%;
+}
+svg{
+    display: inline-block;
+}
+.leadinfo{
+    margin-top: 3rem;
+    margin-right: 1.5rem;
+    width: 30%;
+    max-height: 45rem;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px lightgray;
+    padding: 1rem;
+}
+.activity{
+    width: 70%;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px lightgray;
+    padding: 1rem;
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+}
+.leadinfo ul{
+    padding: 0;
+    margin: 0;
+}
+.leadinfo ul li{
+    margin: 10px 0;
+}
+ .activity span{
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10px;
+ }
+ #lead_name a:hover{
+    color: var(--primary-color);
+ }
