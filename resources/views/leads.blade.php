@@ -237,10 +237,6 @@
             </button>
           </div>
         </form>
-        <form action="{{route('leads')}}" method="GET">
-
-        </form>
-
         <div class="card scroll">
           <div class="card-body px-1 pt-2 pb-2  ">
             <table id="dt_NewCustomers" class="table table-sm display table-row-rounded data-row-checkbox">

@@ -7,11 +7,11 @@ use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Route;
 
 // Signup Page
-// Route::get('/',[AuthController::class,'register'])->name('register');
+// Route::get('/register',[AuthController::class,'register'])->name('register');
 // Route::post('/submit_register',[AuthController::class,'submitRegister'])->name('submit_register');
 
 // Login Page
-Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::get('/',[AuthController::class,'login'])->name('login');
 Route::post('/submit_login',[AuthController::class,'submitLogin'])->name('submit_login');
 
 // Logout Page

@@ -22,7 +22,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate();
-        return redirect('/login')->with('loggedoutSuccess', 'You\'ve been logged out.');
+        return redirect()->route('login')->with('loggedoutSuccess', 'You\'ve been logged out.');
     }
 
     public function submitRegister(Request $req)

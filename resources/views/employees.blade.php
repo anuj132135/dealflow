@@ -274,8 +274,17 @@
             </div>
             <div class="card-body p-2 pt-0">
               <div class="text-center mb-3">
-                <div class="avatar avatar-xxl rounded-4 mx-auto mb-3">
-                  <img src="{{ !empty($employee->image) ? asset('storage/'.$employee->image) : asset("assets/images/default_profile_icon.webp") }}" alt="Image">
+                @php
+                  $colors = ['warning', 'primary', 'danger', 'secondary', 'info', 'success', 'dark'];
+                  $color =  $colors[array_rand($colors)];
+                @endphp
+                <div class="avatar avatar-xxl rounded-4 mx-auto mb-3 bg-{{$color}}-subtle text-{{$color}} border">
+                  @if(!empty($employee->image))
+                  <img src="{{asset('storage/'.$employee->image)}}" alt="Image">
+                  @else
+                  {{ strtoupper(mb_substr($employee->name, 0, 1)) }}
+                  @endif
+                    
                 </div>
                 <h5 class="mb-0 fw-bold">{{$employee->name}}</h5>
                 <p class="text-primary mb-0">{{$employee->designation}}</p>
