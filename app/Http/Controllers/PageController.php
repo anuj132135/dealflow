@@ -13,8 +13,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+<<<<<<< HEAD
 use App\Imports\LeadsImport;
 use Maatwebsite\Excel\Facades\Excel;
+=======
+>>>>>>> 705ae20f799cf140dfc8c234184a72792a6f8107
 
 class PageController extends Controller
 {
@@ -255,6 +258,7 @@ class PageController extends Controller
         return redirect()->route('leadsForm')->with('success', 'New lead added successfully!');
     }
 
+<<<<<<< HEAD
     public function uploadfile(Request $req)
     {
         $req->validate([
@@ -274,6 +278,8 @@ class PageController extends Controller
         );
     }
 
+=======
+>>>>>>> 705ae20f799cf140dfc8c234184a72792a6f8107
     public function customers(Request $request)
     {
         if (Gate::allows('isAdmin')) {

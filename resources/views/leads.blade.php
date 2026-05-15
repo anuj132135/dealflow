@@ -23,7 +23,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
   <div class="error fixed-top">
+=======
+ <div class="error fixed-top">
+>>>>>>> 705ae20f799cf140dfc8c234184a72792a6f8107
     @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>Alert!</strong> {{session('success')}}
@@ -174,6 +178,7 @@
           <h6 class="card-title mb-0">Leads List</h6>
           <div class="d-flex flex-wrap gap-2">
             <div id="dt_NewCustomers_Search"></div>
+<<<<<<< HEAD
             <div class="d-flex gap-3 flex-wrap">
               <!-- Vertically centered modal -->
               <button type="button" title="Upload Excel File" class="btn btn-primary waves-effect waves-light"
@@ -217,6 +222,8 @@
                 </div>
               </div>
             </div>
+=======
+>>>>>>> 705ae20f799cf140dfc8c234184a72792a6f8107
             <a href="{{route('leadsForm')}}" class="text-light text-decoration-none">
               <button type="button" class="btn btn-sm btn-primary waves-effect">
                 <i class="fi fi-rr-plus text-2xs me-1"></i> Add Lead
