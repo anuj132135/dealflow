@@ -1,0 +1,10 @@
+footer{
+    height: 3rem;
+    padding: 0 2rem;
+    box-shadow: 0 0 5px lightgray;
+    background-color: var(--secondary-color);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
