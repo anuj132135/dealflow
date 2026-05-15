@@ -21,11 +21,7 @@ class LeadFactory extends Factory
             'email' => fake()->email(),
             'phone' => fake()->numberBetween(6000000000,9999999999),
             'source' => 'website',
-<<<<<<< HEAD
-            'assigned_employee' => 1,
-=======
             'assigned_employee' => 2,
->>>>>>> 705ae20f799cf140dfc8c234184a72792a6f8107
             'status' => 'new'
         ];
     }
