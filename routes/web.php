@@ -27,10 +27,7 @@ Route::get('/leads/leads-form',[PageController::class,'leadsForm'])->name('leads
 Route::post('/leads/submit-lead',[PageController::class,'submitLead'])->name('submit_lead');
 Route::get('/leads/edit/{name}/{id}',[PageController::class,'leadEdit'])->name('leadEdit')->middleware(AuthMiddleware::class);
 Route::put('/leads/updatesubmit/{id}',[PageController::class,'leadEditSubmit'])->name('leadEditSubmit')->middleware(AuthMiddleware::class);
-<<<<<<< HEAD
 Route::post('/leads/uploadfile',[PageController::class,'uploadfile'])->name('uploadfile')->middleware(AuthMiddleware::class);
-=======
->>>>>>> 705ae20f799cf140dfc8c234184a72792a6f8107
 
 // Lead Detail Page
 Route::get('/leads/{name}/{id}',[PageController::class,'leadActivity'])->name('leadsDetail')->middleware(AuthMiddleware::class);
