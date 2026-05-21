@@ -217,6 +217,8 @@
                   </div>
                 </div>
               </div>
+
+              
             </div>
             <a href="{{route('leadsForm')}}" class="text-light text-decoration-none">
               <button type="button" class="btn btn-sm btn-primary waves-effect">
