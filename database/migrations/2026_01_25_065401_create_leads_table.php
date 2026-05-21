@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->BigInteger('phone');
             $table->string('source');
             $table->unsignedBigInteger('assigned_employee');

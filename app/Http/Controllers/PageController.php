@@ -223,12 +223,6 @@ class PageController extends Controller
     public function submitLead(Request $req)
     {
         $credentials = $req->validate([
-            'name' => 'required',
-            'email' => 'required|unique:leads,email',
-            'phone' => 'required',
-            'source' => 'required',
-            'status' => 'required'
-
         ]);
         $assigned_emp = Gate::allows('isAdmin') ? $req->assigned : Auth::id();
 
@@ -258,10 +252,10 @@ class PageController extends Controller
     public function uploadfile(Request $req)
     {
         $req->validate([
-            'file' => 'required|file|mimes:xlsx,xls,csv|max:20480'
+            'excelfile' => 'required|file|mimes:xlsx,xls,csv|max:20480'
         ]);
 
-        if ($req->hasFile('file')) {
+        if ($req->hasFile('excelfile')) {
             Excel::import(
                 new LeadsImport,
                 request()->file('excelfile')
