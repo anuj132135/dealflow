@@ -70,7 +70,7 @@
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" name="email"
+                                <input type="text" class="form-control" id="inputEmail" name="email"
                                     value="{{old('email', $updateLead->email ?? '')}}">
                             </div>
                             <div class="col-md-6 mb-3">

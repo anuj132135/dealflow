@@ -127,7 +127,7 @@ class PageController extends Controller
 
         $req->validate([
             'name' => 'required',
-            'email' => 'required|unique:leads,email,' . $id,
+            'email' => 'required',
             'phone' => 'required',
             'source' => 'required',
             'status' => 'required'
@@ -222,7 +222,12 @@ class PageController extends Controller
 
     public function submitLead(Request $req)
     {
-        $credentials = $req->validate([
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'source' => 'required',
+            'status' => 'required'
         ]);
         $assigned_emp = Gate::allows('isAdmin') ? $req->assigned : Auth::id();
 
@@ -755,7 +760,7 @@ class PageController extends Controller
         $path = null;
 
         if ($req->hasFile('image')) {
-            $path = $req->file('image')->store('employees', 'public');
+            $path = $req->file('image')->store('profileImage', 'public');
         }
 
         User::create([
@@ -796,7 +801,7 @@ class PageController extends Controller
         $path = null;
 
         if ($req->hasFile('image')) {
-            $path = $req->file('image')->store('employees', 'public');
+            $path = $req->file('image')->store('ProfileImage', 'public');
         }
 
         $editSubmit->update([
@@ -830,7 +835,7 @@ class PageController extends Controller
         $path = null;
 
         if ($req->hasFile('image')) {
-            $path = $req->file('image')->store('employees', 'public');
+            $path = $req->file('image')->store('profileImage', 'public');
         }
 
         $editSubmit->update([
