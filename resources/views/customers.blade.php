@@ -2,23 +2,7 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{{ asset('assets/libs/flaticon/css/all/all.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/lucide/lucide.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/fontawesome/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/simplebar/simplebar.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/node-waves/waves.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-select/css/bootstrap-select.min.css') }}">
-
-  <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="{{ asset('/assets/css/default.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/header.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/leads.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/footer.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-select/css/bootstrap-select.min.css') }}">
+    @include('components.head')
 </head>
 
 <body>

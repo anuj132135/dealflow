@@ -2,27 +2,11 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{{ asset('assets/libs/flaticon/css/all/all.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/lucide/lucide.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/fontawesome/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/simplebar/simplebar.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/node-waves/waves.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-select/css/bootstrap-select.min.css') }}">
-
-  <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="{{ asset('/assets/css/default.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/header.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/dashboard.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/footer.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-select/css/bootstrap-select.min.css') }}">
+    @include('components.head')
 </head>
 
 <body>
-   <div class="error fixed-top">
+  <div class="error fixed-top">
     @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>Alert!</strong> {{session('success')}}
@@ -137,9 +121,13 @@
                 </div>
                 <div class="card-body pt-0">
                   <div class="d-flex align-items-center gap-2">
-                    <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('customers')->where('status', 'active')->count() : DB::table('customers')->where('status', 'active')->where('assigned_employee', Auth::id())->count()}}</h2>
+                    <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('customers')->where('status',
+                      'active')->count() : DB::table('customers')->where('status', 'active')->where('assigned_employee',
+                      Auth::id())->count()}}</h2>
                     <span class="badge badge-sm bg-success-subtle text-success">{{($totalCustomer > 0) ?
-                      (Gate::allows('isAdmin') ? DB::table('customers')->where('status', 'active')->count() : DB::table('customers')->where('status', 'active')->where('assigned_employee', Auth::id())->count()) * 100 : 0}}%</span>
+                      (Gate::allows('isAdmin') ? DB::table('customers')->where('status', 'active')->count() :
+                      DB::table('customers')->where('status', 'active')->where('assigned_employee',
+                      Auth::id())->count()) * 100 : 0}}%</span>
 
                   </div>
                 </div>
@@ -171,9 +159,13 @@
                 </div>
                 <div class="card-body pt-0">
                   <div class="d-flex align-items-center gap-2">
-                    <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('sales')->where('payment_status', 'paid')->count() : DB::table('sales')->where('payment_status', 'paid')->where('employee_id', Auth::id())->count()}}</h2>
+                    <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('sales')->where('payment_status',
+                      'paid')->count() : DB::table('sales')->where('payment_status', 'paid')->where('employee_id',
+                      Auth::id())->count()}}</h2>
                     <span class="badge badge-sm bg-success-subtle text-success">{{($totalSale > 0) ?
-                      (Gate::allows('isAdmin') ? DB::table('sales')->where('payment_status', 'paid')->count() : DB::table('sales')->where('payment_status', 'paid')->where('employee_id', Auth::id())->count()) * 100 : 0}}%</span>
+                      (Gate::allows('isAdmin') ? DB::table('sales')->where('payment_status', 'paid')->count() :
+                      DB::table('sales')->where('payment_status', 'paid')->where('employee_id', Auth::id())->count()) *
+                      100 : 0}}%</span>
 
 
                   </div>
@@ -329,7 +321,8 @@
             </div>
             <div class="card-body py-0 d-flex align-items-start justify-content-between">
               <div class="d-flex align-items-center gap-2">
-                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('lead_follow_ups')->count() : DB::table('lead_follow_ups')->where('employee_id', Auth::id())->count()}}</h2>
+                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('lead_follow_ups')->count() :
+                  DB::table('lead_follow_ups')->where('employee_id', Auth::id())->count()}}</h2>
 
               </div>
               <div id="chartContacts" class="mb-n4 mt-n3"></div>
@@ -361,7 +354,8 @@
             </div>
             <div class="card-body py-0 d-flex align-items-start justify-content-between">
               <div class="d-flex align-items-center gap-2">
-                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('customer_follow_ups')->count() : DB::table('customer_follow_ups')->where('employee_id', Auth::id())->count()}}</h2>
+                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('customer_follow_ups')->count() :
+                  DB::table('customer_follow_ups')->where('employee_id', Auth::id())->count()}}</h2>
               </div>
               <div id="chartContacts" class="mb-n4 mt-n3"></div>
             </div>
@@ -396,8 +390,10 @@
             </div>
             <div class="card-body py-0 d-flex align-items-start justify-content-between">
               <div class="d-flex align-items-center gap-2">
-                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('sales')->where('deleted_at', null)->whereIn('payment_status',
-                  ['paid', 'partial'])->sum('deal_amount') : DB::table('sales')->where('deleted_at', null)->whereIn('payment_status',
+                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('sales')->where('deleted_at',
+                  null)->whereIn('payment_status',
+                  ['paid', 'partial'])->sum('deal_amount') : DB::table('sales')->where('deleted_at',
+                  null)->whereIn('payment_status',
                   ['paid', 'partial'])->where('employee_id', Auth::id())->sum('deal_amount')}}</h2>
               </div>
               <div id="chartContacts" class="mb-n4 mt-n3"></div>
@@ -429,11 +425,14 @@
             </div>
             <div class="card-body pt-0">
               <div class="d-flex align-items-center gap-2">
-                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('sales')->where('deleted_at', null)->where('payment_status',
+                <h2 class="mb-0">{{Gate::allows('isAdmin') ? DB::table('sales')->where('deleted_at',
+                  null)->where('payment_status',
                   'unpaid')->sum('deal_amount') : DB::table('sales')->where('deleted_at', null)->where('payment_status',
                   'unpaid')->where('employee_id', Auth::id())->sum('deal_amount')}}</h2>
                 <span class="badge badge-sm bg-danger-subtle text-danger">{{($totalSale > 0) ?
-                  (Gate::allows('isAdmin') ? DB::table('sales')->where('payment_status', 'unpaid')->count()/$totalSale : DB::table('sales')->where('payment_status', 'unpaid')->where('employee_id', Auth::id())->count()/$totalSale) * 100 : 0}}%</span>
+                  (Gate::allows('isAdmin') ? DB::table('sales')->where('payment_status', 'unpaid')->count()/$totalSale :
+                  DB::table('sales')->where('payment_status', 'unpaid')->where('employee_id',
+                  Auth::id())->count()/$totalSale) * 100 : 0}}%</span>
               </div>
             </div>
             <div class="card-footer border-0 pt-0">

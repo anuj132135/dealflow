@@ -669,11 +669,13 @@ class PageController extends Controller
 
         return view('leads-Followup', compact('leadFollowups', 'users'));
     }
+
     public function deleteLeadFollowup($id)
     {
         LeadFollowUp::findOrFail($id)->delete();
         return redirect()->back()->with('deleteSuccess', 'Lead Followup deleted successfully.');
     }
+
     public function customersFollowup(Request $request)
     {
         if (Gate::allows('isAdmin')) {
@@ -732,6 +734,7 @@ class PageController extends Controller
 
         return view('customers-followup', compact('customerFollowups', 'users'));
     }
+
     public function deleteCustomerFollowup($id)
     {
         CustomerFollowUp::findOrFail($id)->delete();
@@ -880,4 +883,9 @@ class PageController extends Controller
         return redirect()->route('userProfile')
             ->with('success', 'Password updated successfully!');
     }
+
+    public function errorPage(){
+        return response()->view("error", [], 404);
+    }
+
 }

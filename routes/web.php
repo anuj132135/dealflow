@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/register',[AuthController::class,'register'])->name('register');
 // Route::post('/submit_register',[AuthController::class,'submitRegister'])->name('submit_register');
 
+// Error Page
+Route::fallback([PageController::class,'errorPage'])->name('error_page');
+
 // Login Page
 Route::get('/',[AuthController::class,'login'])->name('login');
 Route::post('/submit_login',[AuthController::class,'submitLogin'])->name('submit_login');

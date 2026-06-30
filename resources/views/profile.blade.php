@@ -2,24 +2,7 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{{ asset('assets/libs/flaticon/css/all/all.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/lucide/lucide.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/fontawesome/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/simplebar/simplebar.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/node-waves/waves.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-select/css/bootstrap-select.min.css') }}">
-
-  <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="{{ asset('/assets/css/default.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/header.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/dashboard.css') }}">
-  <link rel="stylesheet" href="{{ asset('/assets/css/footer.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-select/css/bootstrap-select.min.css') }}">
-
+ @include("components.head")
 </head>
 
 <body>
@@ -70,7 +53,8 @@
                     <div class="mb-4 border-bottom pb-4 d-flex border-0 justify-content-between align-items-start">
                       <div class="d-flex align-items-center">
                         <div class="avatar avatar-xl rounded-circle position-relative me-3">
-                          <img src="{{ !empty(Auth::user()->image) ? asset('storage/'.Auth::user()->image) : asset("assets/images/default_profile_icon.webp") }}" alt="Image">
+                          <img src="{{ !empty(Auth::user()->image) ? asset('storage/'.Auth::user()->image) : asset("
+                            assets/images/default_profile_icon.webp") }}" alt="Image">
 
                           <button type="button"
                             class="avatar avatar-xxs bg-primary rounded-circle text-white position-absolute top-0 mt-n1 me-n1 end-0"
@@ -258,6 +242,7 @@
 
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 <script src="{{ asset('assets/js/header.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
